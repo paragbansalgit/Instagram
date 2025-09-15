@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+<body>
+    <h1>Instagram</h1>
+    <hr>
+    <h3>Edit User</h3>
+    <form action="/users/morepost/<%= user.id %>/<%= userid %>?_method=patch" method="post" enctype="multipart/form-data">
+        <label for="profilePic">Add a Picture: </label>
+        <input type="file" accept="image/*" name="profilePic" placeholder="upload your image" required>
+        <br>
+        <label for="content">Content: </label>
+        <textarea name="post" placeholder="enter your content" cols="35" rows="10"><%= user.post %></textarea>
+        <br>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

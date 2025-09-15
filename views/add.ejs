@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+</head>
+<body>
+    <h1>Instagram</h1>
+    <hr>
+    <h3>Add a new user</h3>
+    <form action="/users" method="post" enctype="multipart/form-data" >
+        <label for="username">Username: </label>
+        <input type="text" name="username" required>
+        <br>
+        <label for="username">Password: </label>
+        <input type="password" name="password" required>
+        <br>
+        <label for="profilePic">Add a Picture: </label>
+        <input type="file" accept="image/*" name="profilePic" placeholder="upload your image" required>
+        <br>
+        <label for="content">Content: </label>
+        <textarea name="post" placeholder="enter your content" cols="35" rows="10" required></textarea>
+        <br>
+        <br>
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Post</title>
+</head>
+<body>
+    <h1>Instagram</h1>
+    <h4>Add a new post</h4>
+    <form action="/users/<%= user.id %>" method="post" enctype="multipart/form-data">
+        <label for="username">Username: </label>
+        <input type="text" name="username" value="<%= user.username%>" required readonly>
+        <br>
+        <label for="profilePic">Add a Picture: </label>
+        <input type="file" accept="image/*" name="profilePic" placeholder="upload your image" required>
+        <br>
+        <label for="content">Content: </label>
+        <textarea name="post" placeholder="enter your content" cols="35" rows="10"></textarea>
+        <br>
+        <br>
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Home Page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Instagram</h1>
+    <hr>
+    <form action="/users/add" method="get">
+        <button type="submit">Add New User</button>
+    </form>
+    <hr>
+    <% for(user of users) {%>
+        <div class="post">
+            <img src="<%= user.profilePic %>" alt="profile_Pic">
+            <h3>Username : @<%= user.username %>
+            </h3>
+            <h3>Content : <%= user.post %>
+            </h3>
+            <form action="/users/post/<%= user.id%>" method="get">
+                <button type="submit">Add Post</button>
+            </form>
+            <form action="/users/morepost/<%= user.id %>" method="get">
+                <button type="submit">More Posts</button>
+            </form>
+            <form action="/users/<%= user.id %>" method="get">
+                <button type="submit">Edit</button>
+            </form>
+            <form action="/users/<%= user.id %>/<%= user.profilePic %>?_method=delete" method="post">
+                <button type="submit">Delete User</button>
+            </form>
+        </div>
+        <hr>
+        <% } %>
+</body>
+
+</html>

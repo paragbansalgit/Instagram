@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Instagram</h1>
+    <hr>
+    <h3>More posts from @<%= user.username %>
+    </h3>
+    <% user.morePost.forEach(function(post) { %>
+        <div>
+            <hr>
+            <img src="/<%= post.profilePic %>" alt="Picture">
+            <h3>Username : @<%= post.username %>
+            </h3>
+            <h3>Content : <%= post.post %>
+            </h3>
+            <form action="/users/morepost/update/<%= post.id %>/<%= user.id %>" method="get">
+                <button type="submit">Edit</button>
+            </form>
+            <form action="/users/<%= post.id %>/<%= user.id %>/<%= post.profilePic %>?_method=delete" method="post">
+                <button type="submit">Delete Post</button>
+            </form>
+        </div>
+        <% }); %>
+
+</body>
+
+</html>
