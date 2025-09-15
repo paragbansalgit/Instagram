@@ -1,6 +1,6 @@
 const express=require("express");
 const app=express();
-let port=8080;
+const PORT = process.env.PORT || 3000;
 const path=require("path");
 const multer=require("multer");
 const {v4:uuidv4}=require("uuid");
@@ -31,8 +31,8 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(express.static(path.join(__dirname,"resources")));
 app.use(express.static(path.join(__dirname,"resources/added_images")));
 
-app.listen(port,()=>{
-    console.log(`server was running on port ${port}`);
+app.listen(PORT,()=>{
+    console.log(`server was running on port ${PORT}`);
 })
 
 let users=[
